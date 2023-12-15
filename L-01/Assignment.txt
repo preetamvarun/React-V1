@@ -1,0 +1,36 @@
+Q1) What is an Emmet? 
+
+Ans) An emmet in programming is a software plugin in text editors that allows developers to type less key strokes. For example in vs code text editor to generate the boiler html code all we need to do is just type ! + hit enter.
+
+Q2) What is the difference between framework and library?
+
+Ans) In library developers have more control over the flow of application. Whereas, In case of a framework the framework is in charge of flow of applcation.
+We can use a library wherever we want to in our code. But in a framework It doesn't work like that. It gives you certains areas to place certain code. But the framework will take charge to locate that piece of code and do necessary operations. 
+For example, consider react as an example. React is a javascript library. we can use this library in our code anywhere. All we need to do is, we just need to create a root element with the help of reactDOM and we have to pass in the html element. then react takes charge of that particular html element and we can write react code in that element. But react has got no effect in other parts of the application. Whereas, In a framework let's take spring boot as an example. Developers are restricted to put files like html,css in a folder called templates which is created by spring boot. In case of a framework developers have less control over the flow of application.
+
+But we have to keep in mind that both framework and library is a piece of code written by some other developers to help solve problems.
+
+Q3) What is CDN? Why do we use it?
+
+Ans) CDN stands for content delivery network. In this network there are many servers that are the proxies of the original server which caches all the files like assets/html/css/javascript etc., that are placed strategically all over the world so that the contents of that particular request will be delivered to the user effectively. when a users request some information from a particular website instead of fetching the contents of that request from the original server cached results will be retreived from the cdn. Consequently, latency will be reduces and speed of content delivery will be improved drastically.
+
+Q4) What is the difference between React and ReactDOM?
+
+Ans) React contains core of react functionalities. Whereas reactDOM is used to specifically interact with the document object model of the web page. for example, when we create an h1 tag using react we do it by writing React.createElement("h1"). This returns an javascript object. To convert this object into an html element and insert into the dom we use ReactDOM.
+
+ReactDOM.createRootElement(document.getElementById("root)).render(React.createElement("h1",{},"This is a heading"));
+
+Q5) Why react is known as react?
+
+Ans) Imagine you have a toy that has several buttons on it. When you press a particular buttons it reacts in a particular way like walking or raising it's hand or spinning it's head. Similary, when a user interacts with a web application that is built with react it quickly responds without reloading the entire web application. For that reason, It is named as react.
+
+Q6) what is cross origin in script tag?
+
+Ans) when a particular web server is asking or trying to fetch resources from another server at a different domain it may not be possible due to CORS aka cross origin resource sharing. But if the destination server is configured to share it's resources with my domain then it'll work. This is a security policy because dangerous things could happen if a server is trying to interact with an anonymous server. When we use crossorigin = anonymous in a script tag then the client's browser will fetch data/code from the destination server without including any credentials. The destination servers are configured to do so when they are required to share public data that doesn't contain any sensitive information. when crossorigin is set to use-credentials, the browser includes credentials with the request. So, the server demands authentication and if successfull that resource will be sent. This is helpful for the servers to send sensitive information to the authorized and authenticated clients. when we just leave crossorigin as it is without setting any value, it will be set to anonymous because that is the default value.
+
+Q7) What is difference between react.development.js and react.production.js files via CDN?
+
+Ans) Development phase is stage of application before its public release. Whereas, production phase is the stage of application after public release. The production build will the faster than the developement build. The size of code is less in production build and it is more optimized.
+
+
+
