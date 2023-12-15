@@ -6,15 +6,28 @@
     <title>Hello World</title>
   </head>
   <body>
-    <div id="root">
-      <!-- <h1>Hello World</h1> -->
-    </div>
-
+    <div id="root"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script>
-      const h1 = document.createElement('h1');
-      h1.textContent = 'Hello World⌛';
-      const rootId = document.getElementById('root');
-      rootId.append(h1);
+      const h1 = React.createElement(
+        'h1',
+        { id: 'heading-id' },
+        'Hello world from react'
+      );
+      // h1 is a javascript object
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(h1);
+      //   console.log(h1);
     </script>
   </body>
 </html>
+
+<!-- const h1 = document.createElement('h1');
+h1.textContent = 'Hello World⌛';
+const rootId = document.getElementById('root');
+rootId.append(h1); -->
