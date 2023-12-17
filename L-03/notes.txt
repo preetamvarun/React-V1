@@ -1,0 +1,7 @@
+Just installed parcel. Earlier, we have seen to run our app using parcel we write npx parcel index.html. Now this is not industry standard. The standard way is to put our commands in the scripts section of package.json file.
+{
+    dev-build : "parcel index.html",
+    prod-build : "parcel build index.html"
+}
+
+And then from our terminal we type npm run dev-build or npm run prod-build. 
