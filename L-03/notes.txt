@@ -1,7 +1,49 @@
-Just installed parcel. Earlier, we have seen to run our app using parcel we write npx parcel index.html. Now this is not industry standard. The standard way is to put our commands in the scripts section of package.json file.
+Just installed parcel. Earlier, we have seen to run our app using parcel we write npx parcel index.html. 
+Now this is not industry standard. The standard way is to put our commands in the scripts section of package.json file.
 {
     dev-build : "parcel index.html",
     prod-build : "parcel build index.html"
 }
 
-And then from our terminal we type npm run dev-build or npm run prod-build. 
+And then from our terminal we type npm run dev-build or npm run prod-build.
+
+Note : Instead of saying dev-build, If we write start then we could simply type npm start in the terminal.
+
+Starting of JSX : when we try to write code using React.CreateElement(); we can absolutely do it. There is no one stopping us 
+from doing it. But, It 's okay to use it If we have very simple html document strucutres like <h1>Hello
+</h1> or something like <div><h1>Hi</h1></div>. But when our html document structure gets more and more complicated
+It becomes very hard to write code using React.CreateElement(); 
+So, there should be alternate way. That alternate way is by using JSX. 
+
+JSX is also knows as Javascript XML. It allows to write HTML looking code in javascript files.
+
+So, Instead of doing const h1 = React.CreateElement("h1", {id : "heading"}, "This is heading") we can simply do 
+
+const h1 = <h1 id = "heading">This is heading</h1>;
+
+
+But browswer doesn't understand this piece of code (<h1>This is heading</h1>). Js Engine can't execute this code 
+and throws an error. So, how is it working ? It is working because babel is converting or transpiling this JSX into
+Javascript Object so that It can be excuted by the jsengine in the browswer. 
+
+Note : This is taken care by parcel. When we install parcel babel will also get installed. 
+
+Babel is not just transpiling jsx to React.createElement(); It also does a lot of other things. 
+For example, Babel transpiles Es6 to some other version of ecmascript that older browsers can understand. 
+
+So, In this way babel does a lot of transpilation. Read the docs of babel to get to know more about babel.
+
+Wrap your jsx inside () when you are writing jsx in multiple lines. 
+
+
+Components : Everything inside react is a component. There are two components in react : Functional Component(New) and 
+Class Based Component(Old). 
+
+
+Functional Component at the end of the day is a normal js function which returns some jsx.
+
+you can write any valid js if you wrap it inside {} inside jsx and it comes out as html element in the browser.
+
+
+
+Type of conventions in programming : camelCase, snake_case, PascalCase.
