@@ -45,5 +45,4 @@ Functional Component at the end of the day is a normal js function which returns
 you can write any valid js if you wrap it inside {} inside jsx and it comes out as html element in the browser.
 
 
-
 Type of conventions in programming : camelCase, snake_case, PascalCase.
