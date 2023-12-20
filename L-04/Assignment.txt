@@ -1,0 +1,130 @@
+Q1) Is JSX mandatory for react. 
+
+Ans) No jsx is not mandatory for react. But jsx makes it simplier to write and development components which 
+can be re-used and simpler to maintain. Moreover, react applications that are developed with jsx are more 
+readable, scalabe and maintainable. We can even execute javascript into jsx with a pair of curly braces {}.
+
+Q2) Is es6 mandatory for react .
+
+Ans) No, using Es6 is not mandatory for react. But again it is widely accepted and used in react eco system
+because it many react developers has been using it because It makes development experience must faster and 
+easier. 
+
+Example : 1 For example you can create a functional component by using plain function like 
+
+function MyComponent(){
+    return (
+        <div>
+            <p>This is my component</p>
+        </div>
+    )
+}
+
+But some developers may create the same component using an arrow function which is introduced in ecmascript
+
+
+const MyComponent = () => {
+    return (
+        <div>
+            <p>This is my component</p>
+        </div>
+    )
+}
+
+Note : Also include examples like object destructuring, Template literals, let and const, default parameters,
+Rest parameters, spread operators and classes. 
+
+
+Q3) How to write commends in jsx? 
+
+Ans) {/* This is a comment */}
+
+Q4) What is <React.Fragement></React.Fragement>  and <></> ? 
+
+Ans) In react it is impossible to create two sibling react components without them getting wrapped with 
+a single parent component and a single html element. Let's say we have two components <Comp1/> and <Comp2/>
+
+If we have to render only those two components on the screen on possible solution is to wrap them with a div.
+
+Like this : 
+<div>
+    <Comp1/>
+    <Comp2/>
+</div>
+
+But in this case, we are adding an extra html elemnts into the dom which is not effective. So, we can omit 
+that extra div by wrapping those two component inside <React.Fragement></React.Fragement> or just <></> which 
+is a short hand syntax.
+<>
+    <Comp1/>
+    <Comp2/>
+</>
+
+
+Q5) What is virtual dom and reconciallation in react ? 
+
+Ans) Virtual dom is the light weight representation of the real dom. It resides in the browser memory 
+as well. The advantage of virtual dom is that interaction can be very easy and light weight. So, react 
+has this virtual dom. When something has changed in the virtual dom react creates a copy of the real dom 
+before the change has occured and it also makes another virtual dom. This second virtual dom replicates 
+how the real dom would be after the change has been made. Now, what react does is that it compares these 
+two doms using the diff algorithm and figures out what exactly has been changed and updates only that portion
+in the real dom rather than re-rendering the entire DOM which creates a huge performance boost of the app. 
+
+
+Q6) What are keys Why do we need keys in react ? 
+
+Ans) Let's say we have array of items['🍎','🍊','🍌','🍇']. Now assume that each item is uniquely identified
+by a key. Now, React keeps track of each element in the list and it know what item has been added, deleted or updated.
+As each items in the list is uniquely identified by the key react optimized it's reconcialliation
+process. If there was no key then react might re-render more items than necessary as react lost to keep 
+tract of every item. 
+
+Q7) What are props in react? 
+
+Ans) Props aka properties are the data/functions that we pass from one component to another component in react. 
+It's kind of like passing arguments to a function. Props can make the component dynamic. Also we have to note 
+props are immutable. 
+
+Q8) What is a config driven UI ? 
+
+Ans) That is the form of UI that is configured with the data. When the data in the data layer of our app 
+changes then the UI also changes according to the data. Let's say for example in our application we are 
+fetching some form of data from a 3rd party API. If we get carousel data from the api then our UI contains 
+a carousel else we don't show any carousel.
+
+Q9) Why can't we use keys as index ? 
+
+Ans) Let's say there are the are three list items 
+
+<li key = 1>"Milk"</li>
+<li key = 2>"Egg"</li>
+<li key = 3>"Water"</li>
+
+Let's say we have added a new list item called butter
+
+<li key = 1>"Milk"</li>
+<li key = 2>"Egg"</li>
+<li key = 3>"Water"</li>
+<li key = 4>"Butter"</li>
+
+Now as react constructs two virtual doms in each of those two doms the first three items has been 
+identified with keys 1,2,3 so react keeps track of them and realises only butter has been added. 
+So, it updates accordingly.
+
+
+But the issues arises when we add butter at the start of the list. 
+
+<li key = 1>"Milk"</li>
+<li key = 2>"Egg"</li>
+<li key = 3>"Water"</li>
+
+<li key = 1>"Butter"</li>
+<li key = 2>"Milk"</li>
+<li key = 3>"Egg"</li>
+<li key = 4>"Water"</li>
+
+So, as soon as these two virtual doms has been created then react has to 
+re-render everything because the keys associated with the items has changed after the 
+item has been added. So, this is potential issue the causes the performance of the app to get down. 
+
