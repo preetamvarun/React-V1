@@ -1,0 +1,17 @@
+Q1) What is jsx
+Ans) Jsx is known as javascript xml. It allows us to write html looking syntax into our javascript files.
+You see, when we try to create elements in the dom using React.CreateElement it complicate things. Creating 
+one or two html elements is fine but from there on-wards it's going to get very complicated and becomes 
+less readable and maintainable. That's why we use JSX. We can create html elements with ease. But we have 
+to keep in mind that jsx is not html. Browser doesn't understand jsx. We have a javascript transpiler/compiler
+called Babel which is responsible for turning jsx into React.CreateElement() which is a javascript object and
+one root.render() method is called these objects are converted into actual html elements and will be inserted 
+into dom. In jsx, we can execute any valid javascript expression within the {} braces.
+
+Q2) Explain the advantages of using JSX ? 
+Ans) JSX makes development super easy. When we write code using JSX we are basically writing HTML 
+like looking code. which is more readable, scalable and maintainable. So, There should be less learning curver
+for learning JSX because It is almost similar to html like syntax with minor differences. For example, in html
+we write class where as in JSX we write className.
+
+
