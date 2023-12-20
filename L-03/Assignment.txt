@@ -15,3 +15,33 @@ for learning JSX because It is almost similar to html like syntax with minor dif
 we write class where as in JSX we write className.
 
 
+Q3) Role of type attribute in script tag? What options can I use there?
+
+Ans) Firstly, script tag is used to inject a scripting language into the html file. These days it is 
+javascript 99.99% of times. In HTML5 if you don't specify the type of script tag then it would automatically
+assume that the type of script is javascript. 
+
+<script type = "text/javascript"></script> == <script></script>
+
+Fundamentally, the type attribute specifies the type of content that the file in the script src attribute 
+contains. when I say type = "text/javascript" I am saying that the content in the file is javascript. 
+
+We have another type which is type = "application/javascript". Technically speaking both text/javascript and 
+applicaiton/javascript specifies that the content is of type Javascript. But, application/javascript is a 
+more modernized way and is recommended to use to html5. However, From early days of javascript to now 
+type = "text/javascript" has been widely used and accepted. It is recognised by both old and new browsers.
+
+we can also say type = "module".  we are essentially pointing out the fact that we have organized our 
+code into modules which contains a lot of files in each of those modules. All the files in those modules 
+are related to each other in one way or the other as we use imports and exports. 
+so if we say <script type = "module" src = "main.js"></script> main.js is the entry point which inturn 
+contains different modules with different files.
+
+There are other options like text/css , text/html and so on.
+
+Q4) What is the difference between <Component/>, <Component></Component> ?
+
+Ans) ?
+
+
+
