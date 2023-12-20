@@ -37,6 +37,7 @@ virus.then((msg) => {
 const Content = () => {
   return (
     <div>
+      <Component></Component>
       {MalaciousData}
       <Heading />
       <p>Paragraph Element</p>
@@ -45,6 +46,6 @@ const Content = () => {
   );
 };
 
-// root.render(Heading());
-
 root.render(<Content />);
+
+// root.render(Heading())
