@@ -126,5 +126,25 @@ But the issues arises when we add butter at the start of the list.
 
 So, as soon as these two virtual doms has been created then react has to 
 re-render everything because the keys associated with the items has changed after the 
-item has been added. So, this is potential issue the causes the performance of the app to get down. 
+item has been added. So, react has lost the track of items. 
+So, this is potential issue the causes the performance of the app to get down. 
+
+Q10) What is a react fibre ? 
+
+Ans) Earlier, Before react 16 was introduces react used a reconciler(in core react) called stack reconciler. Since the stack is synchronous reconcilliaiton
+process will be delayed causing rendering issues. For example let's consider this scenario. 
+Let's say user has been typing something into the input box and when user types he should see 
+what he has been typing. This is a high priority update. But let's say before user has started 
+typing something has already been running in the background. Since stack is synchronous It 
+can work one task after the other. so, after the background work has finished then stack 
+reconciler deals with what the user has typing and then updates the screen accordingly. 
+In you observer, in this scenario the user will experience delay. 
+
+Now react's team has decided to re-implement the react's core reconcialliation algorithm. 
+Which is known as react fiber. React fiber is asynchronous. React Fiber divides rendering work into 
+various units of work where each unit of work is called a fiber. A fibre is nothing but a plain 
+old javascript object with some properties. So, during the reconcillaion process react works 
+asynchronously on react fibers also known as units of work. This react fiber reconciller has the ability 
+to prioritize tasks, schedule tasks, stop, start and resume tasks. which makes rendering very 
+fast and optimizable.
 

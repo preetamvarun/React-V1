@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import { v4 } from 'uuid';
+import KeysIssue from './KeysIssue';
 
 const market = [
   '🍊',
@@ -53,6 +54,7 @@ const App = () => {
       <Header />
       {/* COMMENT IN JSX */}
       <Body />
+      <KeysIssue />
     </div>
   );
 };
