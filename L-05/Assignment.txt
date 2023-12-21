@@ -1,0 +1,117 @@
+Q1) What are react hooks ? 
+
+Ans) React hooks are normal javascript functions that enables functional components to have state, lifecycle
+methods and other features that were previously available in class based components. Some of the react hooks 
+are useState, useEffect, useReducer, useMemo, useProvider, useContext etc.,
+
+Q2) What is a useState hook ?
+
+Ans) A useState hook allows functional components to manage state. This useState hook returns an array with 
+two values in it. First one is what we called state variable and the second one is a function that sets this 
+state variable. Whenever we set the state variable using this function reconcialliation happens which triggers
+the page to re-render not entirely but renedering the parts where the change has occured. 
+
+We could also put a default value for this state variable like : let [x, setX] = useState(0);
+
+
+Q3) What is the difference between Named export, Default export, and * as export ?
+
+Ans) Named Export :
+
+In named export we can export a function or a variable by specifying the export keyword infront of the 
+variable or a function or a class. Or else we export all of the at the end of the file by using export {names of the funcitons/variables/classes separated by comma we want to export}
+Afterwards, to import whatever we have exported we use {} braces and we specify the
+exact same name of that particular variable or a function. we can have as many named imports as possible. 
+
+Default Export : Unlike named export one file can only have one default export. We just write default export "The thing we want to export"
+
+and we can import it by saying import 'anyName' from 'filename';
+
+* as Import  : Let's say we are exporting multiple things from a file. we can import all of them at once
+by saying import {* as x}. and we can use individual items by saying x.name
+
+
+Q4) What is a monolith architecture ? 
+
+Ans) The idea of monolith architecture is to build a project in a single repository that contains various 
+services/functionalities embedded in the project folder like UI code, back end services code, database connectivity, 
+Authentication & Authorization etc., When a single change has been made like for example we have changed 
+a column in our database table to get that reflected change in the end product we have to rebuild the 
+entire code. 
+
+
+Q5) What is a microservice architecture ? 
+
+Ans) Microservices are quite opposite to monolith. The idea of mircoservices are we divide the functionality 
+of our application into various services and each of these services have their own code base. Each of these 
+services are deployed independently and they run at various ports. For example, when we are building a web 
+application we can have a UI service, Back-end service, A notification service, A Security service and so on and
+all these services will operate with together by making calls to one another depending on the use case. 
+Now-a-days most of the projects are following microservice architecture because each service can be developed 
+in it's own tech stack and it is maintainable and scalable as well. 
+
+
+Q6) Compare  Microservices architecture and monolith architecture
+
+Ans) monolith
+
+-> Single Code Base 
+-> Entire code base is deployed in one particular location
+-> Components are tightly coupled 
+-> Less flexibility
+-> Get's harder to maintain as the project grows 
+-> Less scalable 
+-> Limited techstack 
+-> One bug can cause the entire application to fail 
+
+Microservices 
+
+-> multiple code base 
+-> Each service can be deployed independently and they run independently at various ports 
+-> Here are the components are loosely coupled and they communicate via api calls.
+-> More flexibility
+-> maintainable
+-> More scalable 
+-> Here The tech stack is not limited. we can implement any tech stack we want depending on the use case. 
+-> Here since the services are independent. If a bug occurs it will be limited to that service and it doesn't 
+cause our entire application to fail. 
+
+
+Q7) Why do we need useEffect hook? 
+
+Ans) We need useEffect hook to do side effect operations in our code. Now let's understand what is a 
+side effect operation. If we are doing certain operations that don't impact the result of the class/functional 
+component in any way then we call that sort of operation as a side effect operation like making and api call, 
+interacting with dom or using setTimeout and so on. 
+
+the useEffect hook takes two arguments one is a call back function in which we do our side effect operation, 
+and other is a dependency array which basically dictaces when should our callback funciton in the useEffect 
+should get executed. 
+
+A useEffect hook will run right after the component has rendered. 
+
+For example Consider the following case : 
+
+Empty Dependency Array : useEffect(() => {},[]);// call back function will run only once (after the component has rendered)
+
+Non-Empty Dependency Array : useEffect(() => {},[a,b]); // runs after the initial render. Also run everytime when a and b has changed 
+
+No Dependency Array : useEffect(() => {}); // Runs everytime after the component has rendered. 
+
+
+Let's consider the following example : 
+
+useEffect(() => {
+    let timer = setTimeout(() => {
+        console.log("Timer has Finished")
+    }, 2000)
+    return () => {
+        clearTimeout(timer);
+    }
+},[a,b,c]);
+
+sometimes we have to clearout sideffect logics like above. to do that we usually a return a function in 
+the side-effect and in this returned funciton we perform the side-effect cleanup logic. So, basically how
+this works is that when the useEffect is called for the first time setTimeout function will be called and after 
+it renders for the second time before executing the sideffect which is setTimeout in this case will be called 
+after cleanup process has been execute which is clearTimeout(timer) in this case and so on. 
