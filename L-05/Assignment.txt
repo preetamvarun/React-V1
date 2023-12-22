@@ -115,3 +115,20 @@ the side-effect and in this returned funciton we perform the side-effect cleanup
 this works is that when the useEffect is called for the first time setTimeout function will be called and after 
 it renders for the second time before executing the sideffect which is setTimeout in this case will be called 
 after cleanup process has been execute which is clearTimeout(timer) in this case and so on. 
+
+Q8) what is optional chaining?
+
+Ans) Optional chaining allows us to access properties of the object to without explicitly checking 
+whether that property actually exists in this object. Optional chaining get's usually super helpful
+when we are working with json data that comes through a third party api. 
+
+Q9) What is shimmer UI?
+
+Ans) shimmer UI is the UI that we show to the end user while the screen is loading. 
+The UI will be in such a way that the user kind of anticipates what he is going to see when the 
+screen is completely loaded. Think of shimmer UI like the skeleton version of the actual UI that the end 
+user is going to see. It's actually a good practice to use shimmer UI instead of showing 
+some loading spinners or black screens. Now-a-days many big tech companies use shimmer screens like 
+youtube, instagram etc.
+
+Q10) 
