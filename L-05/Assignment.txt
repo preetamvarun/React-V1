@@ -184,3 +184,40 @@ browser tags some of the request as simple request
 simple requests : preflight calls are not made 
 
 other request : prefight calls are made 
+
+
+Q12) What is a single page application ? 
+
+Ans) In single page application whenever something change in our web app like changing a url, a whole 
+page refresh is not going to happen. In SPA's the whole code for the web application is already stored 
+inside the browser memory and exisiting UI part of the web application is replaced by another chunk of js 
+code which eventually returns another UI. Let's say there is a react application which is popular for 
+building spa's. In that application we have a simple paragrah that says The score is : 0. And there is button 
+to increment the score. Each time the user click the button the score will be incremented by 1. So, what 
+happens here is that when the user clicks a button only that number will get updated rather and the page 
+doesn't reload. So, The part of paragraph text which is "The score is : " remaining intact because the 
+code for this is already preserved in the browser memory and there is no need to reload entire application 
+only the score part which is the value of the score will be updated.
+
+
+
+Q13) What is the difference between Client Side Rendering And Server Side Rendering ?
+
+Ans) So, to understand the difference between these two let's consider an example. A is a web application 
+that is sending a get request to B. In server side routing what happens is that the whole page relaods 
+after the request has been successful. Because when a client sends a request to B the server responds to 
+that request by sending a brand new HTML page so that the existing page will be removed and the application 
+will be reloaded with the exising html page which results in reloading the entire page. 
+
+In client rendering this works a bit different. Here the server doesn't respond to the client by sending a 
+brand new html page. It responds with a bunch of JSON or XML and the server lets the responsibility of the 
+creating the dom to the client. So, client on the other end receives this data and builds his own dom which 
+will be replaced with the existing dom and it doens't cause the page to reload which results in performace boost. 
+
+Q14) What happens when we do console.log(useState())? 
+
+Ans) We see an array of two values the first one being the initial value of the state which is undefined 
+and second being the function (dispatchAction) that is used to update the value of the state.
+
+console.log(useState()); // [undefined, function dispatchAction()]
+console.log(useState(1)); // [1, function disptachAction()]
