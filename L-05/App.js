@@ -1,9 +1,17 @@
-import U from './Module';
-import { name } from './Module';
-import { age } from './Module';
+import React from "react";
+import ReactDOM from 'react-dom/client'
+import UserCard from "./UserCard";
 
-let user = new U('preetam', 34);
+class App extends React.Component {
+    render(){
+        return (
+            <div>
+                <UserCard name = {"preetam"}/>
+            </div>
+        )
+    }
+}
 
-console.log(user);
 
-console.log(name.apply(user));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App/>)
