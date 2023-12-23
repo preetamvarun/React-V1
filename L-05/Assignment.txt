@@ -131,4 +131,56 @@ user is going to see. It's actually a good practice to use shimmer UI instead of
 some loading spinners or black screens. Now-a-days many big tech companies use shimmer screens like 
 youtube, instagram etc.
 
-Q10) 
+Q10) What is the difference between javascript expression and a statement
+
+Ans) In javascript an expression is a piece of code that turns out or produces a value. 
+
+For example
+
+(function() {console.log("Hi")})(); // This is an expression because It produces the value HI;
+
+isAlive ? "Yes" : "No"; // This is a function expression because It produces a value Yes or No. 
+
+let x =  4 + 5; // This is also an expression
+
+
+Whereas, A statement tells the program to perform a certain action 
+
+function greeting(){ // This is a statement. we are telling to create a function greeting 
+    return "Hi";
+}
+
+while(i < 10) // This is a statement we are essentially telling to perform the loop while i < 10
+
+for(let i = 0; i < 5; i++) // This is a statement 
+
+One simple trick to find the difference between statement and an expression is that we can console.log an 
+expression but not a statement .
+
+In jsx within those curly braces we can only write expressions but not statement. 
+
+Q11) What is CORS ? 
+
+Ans) CORS REFERS TO cross origin resource sharing is a mechanism that tells the browswer whether a 
+particular web application can share resources with a different server from differnt origin(a different domain)
+
+If both the applications are from the same origin it's fine else they have to follow cors mechanism.
+
+
+For example let's consider two web applications A and B. Both are at differnt domains/origins. 
+
+
+Let's say A want to do a post request to B. So here CORS will come into picture. 
+
+Firstly, A will send a preflight call to B. B will check the validity of this call and if it is valid it 
+will respond to A by sending some additional http headers. These contains things like 
+
+Access-Control-Allow-Origins : contains list of domains that are allowed by b 
+Access-Control-Allow-Methods : contains list of methods that are allowed by b like GET,POST,PUT,DELETE  
+
+
+browser tags some of the request as simple request 
+
+simple requests : preflight calls are not made 
+
+other request : prefight calls are made 
