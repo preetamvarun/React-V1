@@ -19,4 +19,41 @@ The best place is inside the constructor. Why? Because the constructor is like t
 for the room, and it's called only once during the initial mounting phase. It's where you set up 
 the initial state and gather props, ensuring a solid foundation for your component.
 
-I hope this revised analogy helps clarify the concepts!
+
+
+HIERARCHY : Parent component P has two child components C1 & C2. C1 component has two more 
+child components a & b. 
+
+Hierarchy : 
+PARENT COMPONENT P 
+CHILD C1 
+a
+b
+CHILD C2 
+
+Parent constructor -> Parent Render -> C1 constructor -> C1 Render -> a Constructor -> a Render -> 
+b Constructor -> b Render -> C2 constructor -> C2 Render -> a componentDidMount -> b componentDidMount 
+-> C1 componentDidMount -> C2 componentDidMount -> Parent componentDidMount
+
+
+The React component lifecycle follows a consistent pattern regardless of the complexity of the component hierarchy. Here's a general overview:
+
+1. Render Phase:
+   - React starts with the outermost (parent) component and proceeds to render each component in the 
+    hierarchy.
+   - The `constructor` and `render` methods are called for each component, from the top-level parent to 
+    the innermost child.
+
+2. Mounting Phase:
+   - After the render phase is complete, React starts the mounting phase, during which the components 
+   are added to the DOM.
+   - The `componentDidMount` method is then called for each component, starting from the innermost 
+   child and moving outward to the parent.
+
+This pattern ensures that components are rendered and mounted in a hierarchical order, 
+from the top-level parent down to the innermost child. The `componentDidMount` method is 
+invoked after the mounting is complete for each component.
+
+This consistency allows developers to reason about the lifecycle of components, 
+regardless of the complexity of the component hierarchy. It's a fundamental aspect of 
+how React manages component rendering and lifecycle events.
