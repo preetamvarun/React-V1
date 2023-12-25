@@ -4,11 +4,11 @@ import React from "react"
 export const useEnhancedCounter = (Counter) => {
 
     // Return a functional component 
-    return () => {
+    return (props) => {
         return (
             <div>
                 <p>😂</p>
-                <Counter/>
+                <Counter {...props}/>
             </div>
         )
     }
