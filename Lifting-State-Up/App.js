@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import InputBox from "./InputBox";
 import {useState} from 'react';
 import TaskBox from "./TaskBox";
+import ParentBox from "./ParentBox";
 
 const App = () => {
     const [tasks, Settasks] = useState(['Do Meditation', 'Learn Recursion', 'Read Atomic Habits']);
@@ -19,8 +20,10 @@ const App = () => {
     return (
         <div>
             <h1>Todo List</h1>
-            <InputBox addtaskfn = {AddTasks}/>
-            <TaskBox tasks = {tasks} deletetaskfn = {DeleteTasks}/>
+            <ParentBox>
+                <InputBox addtaskfn = {AddTasks}/>
+                <TaskBox tasks = {tasks} deletetaskfn = {DeleteTasks}/>
+            </ParentBox>
         </div>
     )
 }
