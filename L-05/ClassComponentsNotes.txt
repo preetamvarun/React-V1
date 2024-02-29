@@ -1,4 +1,3 @@
-Certainly! Let me provide a revised analogy considering the clarified points:
 
 When we use a function in the `useState` hook to update a state variable, the component re-renders. 
 But what does re-render mean?
