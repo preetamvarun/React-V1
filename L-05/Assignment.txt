@@ -141,10 +141,9 @@ For example
 
 isAlive ? "Yes" : "No"; // This is a function expression because It produces a value Yes or No. 
 
-let x =  4 + 5; // This is also an expression
-
-
 Whereas, A statement tells the program to perform a certain action 
+
+let x = 10; // This is a statement.
 
 function greeting(){ // This is a statement. we are telling to create a function greeting 
     return "Hi";
